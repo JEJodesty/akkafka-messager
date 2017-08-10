@@ -2,7 +2,7 @@ import socket, threading
 from kafka import KafkaConsumer, KafkaProducer
 
 producer = KafkaProducer(bootstrap_servers='localhost:9092')
-consumer = KafkaConsumer('channel-out')
+consumer = KafkaConsumer('channelOut')
 
 
 def send():

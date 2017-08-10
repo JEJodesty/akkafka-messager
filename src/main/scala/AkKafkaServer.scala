@@ -36,13 +36,13 @@ object AkKafkaServer {
 
     val stream = {
       val kstreamBuilder = new KStreamBuilder
-      val rawStream: KStream[String, String] = kstreamBuilder.stream("channel-in")
+      val rawStream: KStream[String, String] = kstreamBuilder.stream("channelIn")
 
       val helloStream: KStream[String, String] = rawStream.mapValues(new ValueMapper[String, String]{
         override def apply(value: String): String = s"Kafka - $value"
       })
 
-      helloStream.to(Serdes.String, Serdes.String, "channel-out")
+      helloStream.to(Serdes.String, Serdes.String, "channelOut")
 
       val streamProps = new Properties
       streamProps.put(StreamsConfig.APPLICATION_ID_CONFIG, "AkKafka")
@@ -70,7 +70,7 @@ object AkKafkaServer {
         Flow[Message].map {
           // transform websocket message to domain message
           case TextMessage.Strict(text) => {
-            produce("channel-in", text)
+            produce("channelIn", text)
             User.IncomingMessage(text)
           }
         }.to(Sink.actorRef[User.IncomingMessage](userActor, PoisonPill))

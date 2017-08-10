@@ -1,6 +1,7 @@
 # AkKafka Messager
 A lightweight peer-to-peer messaging application over websockets with an Akka HTTP / Kafka Server and a Python CLI client.
  
+![solarized dualmode](https://github.com/akkafka-messager/screenshots/AkKafka_demo.png?raw=true "AkKafka Demo")
 
 #### Step 1: Start Zookeeper, the Kafka Broker, and create Kafka Stream Topics
 Before running the server and clients, run the following commands in separate CLIs from the base folder of your Kafka application, 
@@ -15,10 +16,11 @@ kafka_2.11-0.10.2.0$ bin/kafka-server-start.sh config/server.properties
 ```
 
 #### Step 2: Create the Topics needed for the application.
+Run the following commands in separate CLIs from the base folder of your Kafka application
 
 ```shell
-kafka_2.11-0.10.2.0$ bin/kafka-topics.sh --create --topic channel-in --replication-factor 1 --partitions 1 --zookeeper localhost:2181
-kafka_2.11-0.10.2.0$ bin/kafka-topics.sh --create --topic channel-out --replication-factor 1 --partitions 1 --zookeeper localhost:2181
+kafka_2.11-0.10.2.0$ bin/kafka-topics.sh --create --topic channelIn --replication-factor 1 --partitions 1 --zookeeper localhost:2181
+kafka_2.11-0.10.2.0$ bin/kafka-topics.sh --create --topic channelOut --replication-factor 1 --partitions 1 --zookeeper localhost:2181
 ```
 
 #### Step 3: Run Server
@@ -40,17 +42,17 @@ Output:
 ```sbtshell
 Started server at 127.0.0.1:8080, press enter to kill server
 ```
-
-#### Step 4: Run Kafka Chat Log / Message Broadcaster
-This is a CLI for an administrator to monitor and broadcast messages to all users.
-Navigate to the project root directory and run the following (Python 2.7.12)
-```shell
-python Clients/KafkaBroadcastClient.py
-``` 
-
-#### Step 5: Run Multiple User Clients
+#### Step 4: Run Multiple User Clients / Kafka Chat Log/Broadcaster
 This is a CLI for multiple users to join a chat group.
 Navigate to the project root directory and run the following (Python 2.7.12)
 ```shell
-python Clients/AkKafkaClient.py
+python clients/AkKafkaClient.py
 ``` 
+
+This is a CLI for an administrator to monitor and broadcast messages to all users.
+Navigate to the project root directory and run the following (Python 2.7.12)
+```shell
+python clients/KafkaBroadcastClient.py
+``` 
+
+

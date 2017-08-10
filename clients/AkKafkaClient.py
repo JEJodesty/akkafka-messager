@@ -4,7 +4,7 @@ import threading
 
 group = raw_input('Enter Group/Channel > ')
 user = raw_input('Enter Username > ')
-consumer = KafkaConsumer('channel-out')
+consumer = KafkaConsumer('channelOut')
 
 def send(user):
     while True:
