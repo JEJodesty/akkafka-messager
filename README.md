@@ -1,7 +1,8 @@
 # AkKafka Messager
-A lightweight peer-to-peer messaging application over websockets with an Akka HTTP / Kafka Server and a Python CLI client.
+A lightweight peer-to-peer messaging application over websockets with an Akka HTTP / Kafka Scala Server and a Python CLI client.
  
 ![Alt text](https://github.com/JEJodesty/akkafka-messager/blob/master/screenshots/AkKafka_demo.png?raw=true?raw=true "AkKafka Demo")
+
 
 #### Step 1: Start Zookeeper, the Kafka Broker, and create Kafka Stream Topics
 Before running the server and clients, run the following commands in separate CLIs from the base folder of your Kafka application, 
@@ -54,5 +55,10 @@ Navigate to the project root directory and run the following (Python 2.7.12)
 ```shell
 python clients/KafkaBroadcastClient.py
 ``` 
+
+##### To Do:
+* Right now there is only a single group/channel called "chat" which is a bound endpoint. 
+I will add more groups/channels/end points and include the ability for users to subscribe to channels.
+* User Authentication.
 
 
