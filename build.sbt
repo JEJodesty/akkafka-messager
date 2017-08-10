@@ -15,10 +15,6 @@ val otherDependencies = Seq(
   "com.typesafe.akka" %% "akka-http-experimental" % "2.4.4"
 )
 
-val main = "com.vishnuviswanath.kafka.streams.KafkaStreamsExample"
-mainClass in (Compile, run) := Some(main)
-mainClass in (Compile, packageBin) := Some(main)
-
 lazy val root = (project in file(".")).
   settings(
     libraryDependencies ++= kafkaDependencies,

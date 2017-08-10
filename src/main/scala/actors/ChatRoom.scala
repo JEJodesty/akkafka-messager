@@ -1,4 +1,4 @@
-package chat
+package actors
 
 import akka.actor._
 
