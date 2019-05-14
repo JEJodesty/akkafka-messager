@@ -1,5 +1,5 @@
-# AkKafka Messager
-A lightweight peer-to-peer messaging application over websockets with an Akka HTTP / Kafka Scala Server and a Python CLI client.
+# AkKafka Messenger
+Developing a peer-to-peer messaging solution on a Kafka cluster for distributed message stream processing and message broadcasting. The current state of this solution includes a Akka HTTP / Apache Kafka Scala Server, Python Command Line Interface (CLI) chat clients, and Apache ZooKeepeer to launch multiple servers and manage distributed stream processing on computing clusters.
  
 ![Alt text](https://github.com/JEJodesty/akkafka-messager/blob/master/screenshots/AkKafka_demo.png?raw=true?raw=true "AkKafka Demo")
 
