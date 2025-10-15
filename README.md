@@ -61,4 +61,3 @@ python clients/KafkaBroadcastClient.py
 I will add more groups/channels/end points and include the ability for users to subscribe to channels.
 * User Authentication.
 
-
