@@ -60,4 +60,3 @@ python clients/KafkaBroadcastClient.py
 * Right now there is only a single group/channel called "chat" which is a bound endpoint. 
 I will add more groups/channels/end points and include the ability for users to subscribe to channels.
 * User Authentication.
-
